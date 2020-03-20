@@ -1,0 +1,35 @@
+#!/bin/sh
+
+## clear the logs (quietly)
+rm -f intermine.log
+
+## echo a big marker so we can see when this run started in the scroll
+echo "##################################################################################################"
+echo "##################################### postprocess ################################################"
+echo "##################################################################################################"
+
+## IM CORE
+./gradlew postprocess -Pprocess=do-sources
+./gradlew postprocess -Pprocess=create-utr-references
+./gradlew postprocess -Pprocess=create-references
+./gradlew postprocess -Pprocess=make-spanning-locations
+./gradlew postprocess -Pprocess=create-chromosome-locations-and-lengths
+./gradlew postprocess -Pprocess=create-intergenic-region-features
+./gradlew postprocess -Pprocess=transfer-sequences
+./gradlew postprocess -Pprocess=populate-child-features
+./gradlew postprocess -Pprocess=create-intron-features
+./gradlew postprocess -Pprocess=create-gene-flanking-features
+
+## LIS
+./gradlew postprocess -Pprocess=lis-create-protein-gene-references
+./gradlew postprocess -Pprocess=lis-create-cds-references
+./gradlew postprocess -Pprocess=lis-populate-publications
+
+## views and indexes
+./gradlew postprocess -Pprocess=create-location-overlap-index
+./gradlew postprocess -Pprocess=create-overlap-view
+./gradlew postprocess -Pprocess=create-attribute-indexes
+./gradlew postprocess -Pprocess=summarise-objectstore
+./gradlew postprocess -Pprocess=create-autocomplete-index
+./gradlew postprocess -Pprocess=create-search-index
+
