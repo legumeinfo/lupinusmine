@@ -1,7 +1,0 @@
-SELECT * FROM CLOB WHERE clobid=(SELECT residues::int from intermine_sequence where id=(SELECT sequenceid from mrna where primaryidentifier='lupal.Amiga.gnm1.ann0.mRNA:Lalb_Chr00c01g0403611.1'));
- clobid  | clobpage |                                                                                                                                                value                                      
-                                                                                                          
----------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-----------------------------------------------------------------------------------------------------------
- 9000002 |        0 | ATGAAGCAGCAACTCAAGGACTATGGTCTTAATATTGAAAAGATCCCTATTAAATGCGATAACACAAGTGCCATAAACCTTTCCAAGAATCCCGTCTTGCATTCTAGAACTAAGCATATAGAAATTAGACATCATTTTCTGCGTGATCATGTACAAAAAGGTGACTGCGTTCTTGAATTTGTTGAA
-ACTTCTAAACAATTAGCTGATATTTTCACCAAGCCCCTTCCCAGGGATACTTTCTTTGTTCTAAGGAGAGAACTTGGAATTCTTGATGAACAATATCTTGATTAA
