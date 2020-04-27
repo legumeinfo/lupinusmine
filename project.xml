@@ -5,208 +5,246 @@
   <property name="default.intermine.properties.file" location="../default.intermine.integrate.properties"/>
   <sources>
 
-<!-- /data/LIS/Lupinus_albus/ -->
-<!-- ├── Amiga.gnm1.ann0.3GKS -->
-<!-- │   ├── lupal.Amiga.gnm1.ann0.3GKS.cds.fna -->
-<!-- │   ├── lupal.Amiga.gnm1.ann0.3GKS.gene_models_main.gff3 -->
-<!-- │   ├── lupal.Amiga.gnm1.ann0.3GKS.protein.faa -->
-<!-- ├── Amiga.gnm1.F4NR -->
-<!-- │   ├── lupal.Amiga.gnm1.F4NR.genome_main.fna -->
-<!-- └── README.6LMX.md -->
+    <!-- Gene_families/legume.genefam.fam1.M65K/ -->
+    <source name="lis.fam1-genefamily" type="lis-genefamily" dump="true">
+      <property name="dataSetUrl" value="https://legumeinfo.org/data/public/Gene_families/legume.genefam.fam1.M65K/"/>
+      <property name="dataSetDescription" value="LIS gene families"/>
+      <property name="src.data.dir" location="/data/LIS/Gene_families/legume.genefam.fam1.M65K"/>
+    </source>
 
-    <source name="lupal" type="lis-datastore" dump="true">
+    <!-- ############# -->
+    <!-- Lupinus albus -->
+    <!-- ############# -->
+
+    <!-- about_this_collection -->
+    <!-- ├── description_Lupinus_albus.yml -->
+    <!-- └── strains_Lupinus_albus.yml -->
+    <source name="lupal-about" type="lis-about" dump="true">
+      <property name="dataSetUrl" value="https://legumeinfo.org/data/public/Lupinus_albus/about_this_collection/"/>
+      <property name="dataSetDescription" value="Lupinus albus organism and strain information."/>
       <property name="src.data.dir" location="/data/LIS/Lupinus_albus/about_this_collection"/>
     </source>
 
-    <source name="lupal.Amiga.gnm1.ann0" type="lis-datastore" dump="true">
-      <property name="src.data.dir" location="/data/LIS/Lupinus_albus/Amiga.gnm1.ann0.3GKS"/>
-    </source>
+    <!-- ################### -->
+    <!-- Lupinus albus Amiga -->
+    <!-- ################### -->
 
-    <source name="lupal.Amiga.gnm1.ann0-gff" type="lis-gff" dump="true">
-      <property name="gff3.dataSourceName" value="Legume Information System"/>
-      <property name="gff3.dataSetTitle" value="lupal.Amiga.gnm1.ann0.3GKS"/>
-      <property name="gff3.dataSetDescription" value="Annotation for the lupal.Amiga.gnm1 genome"/>
-      <property name="gff3.taxonId" value="3870"/>
-      <property name="gff3.strainIdentifier" value="Amiga"/>
-      <property name="gff3.licence" value="https://www.opendatacommons.org/licenses/pddl/1.0/"/>
-      <property name="src.data.dir" location="/data/LIS/Lupinus_albus/Amiga.gnm1.ann0.3GKS"/>
-    </source>
-
-    <!-- >lupal.Amiga.gnm1.Lalb_Chr01 len=23521228 -->
+    <!-- Amiga.gnm1.F4NR -->
+    <!-- ├── lupal.Amiga.gnm1.F4NR.genome_main.fna -->
     <source name="lupal.Amiga.gnm1-chromosome-fasta" type="lis-fasta" dump="true">
-      <property name="lis-fasta.dataSourceName" value="Legume Information System"/>
-      <property name="lis-fasta.dataSetName" value="lupal.Amiga.gnm1.F4NR"/>
-      <property name="lis-fasta.dataSetDescription" value="LIS datastore genomic FASTA file"/>
+      <property name="lis-fasta.dataSetDescription" value="LIS datastore genomic FASTA file for Lupinus albus Amiga"/>
+      <property name="lis-fasta.dataSetVersion" value="gnm1"/>
+      <property name="lis-fasta.dataSetUrl" value="https://legumeinfo.org/data/public/Lupinus_albus/Amiga.gnm1.F4NR/"/>
       <property name="lis-fasta.taxonId" value="3870"/>
       <property name="lis-fasta.strainIdentifier" value="Amiga"/>
       <property name="lis-fasta.sequenceType" value="dna"/>
       <property name="lis-fasta.className" value="org.intermine.model.bio.Chromosome"/>
       <property name="lis-fasta.classAttribute" value="primaryIdentifier"/>
-      <property name="lis-fasta.licence" value="https://www.opendatacommons.org/licenses/pddl/1.0/"/>
+      <property name="lis-fasta.licence" value="ODC Public Domain Dedication and Licence (PDDL)"/>
       <property name="lis-fasta.includes" value="lupal.Amiga.gnm1.F4NR.genome_main.fna"/>
       <property name="src.data.dir" location="/data/LIS/Lupinus_albus/Amiga.gnm1.F4NR"/>
     </source>
 
-    <!-- lupal.Amiga.gnm1.ann0.mRNA:Lalb_Chr00c01g0403731.1 locus_tag=Lalb_Chr00c01g0403731 gn=Lalb_Chr00c01g0403731 len=95 chr=Lalb_Chr00c01 strand=-1 sp=Unknown def=Putative...family -->
+    <!-- Amiga.gnm1.ann0.3GKS -->
+    <!-- ├── lupal.Amiga.gnm1.ann0.3GKS.gene_models_main.gff3 -->
+    <!-- ├── lupal.Amiga.gnm1.ann0.3GKS.cds.fna -->
+    <!-- ├── lupal.Amiga.gnm1.ann0.3GKS.mRNA.fna -->
+    <!-- ├── lupal.Amiga.gnm1.ann0.3GKS.protein.faa -->
+    <source name="lupal.Amiga.gnm1.ann0-gff" type="lis-gff" dump="true">
+      <property name="gff3.dataSourceName" value="LIS Datastore"/>
+      <property name="gff3.dataSourceUrl" value="https://legumeinfo.org/data/public/"/>
+      <property name="gff3.dataSourceDescription" value="A collaborative, community resource to facilitate crop improvement by integrating genetic, genomic, and trait data across legume species."/>
+      <property name="gff3.dataSetTitle" value="lupal.Amiga.gnm1.ann0.3GKS.gene_models_main.gff3"/>
+      <property name="gff3.dataSetUrl" value="https://legumeinfo.org/data/public/Lupinus_albus/Amiga.gnm1.ann0.3GKS/"/>
+      <property name="gff3.dataSetDescription" value="Gene model annotation for the lupal.Amiga.gnm1 genome"/>
+      <property name="gff3.dataSetVersion" value="gnm1.ann0"/>
+      <property name="gff3.licence" value="ODC Public Domain Dedication and Licence (PDDL)"/>
+      <property name="gff3.taxonId" value="3870"/>
+      <property name="gff3.strainIdentifier" value="Amiga"/>
+      <property name="src.data.dir" location="/data/LIS/Lupinus_albus/Amiga.gnm1.ann0.3GKS"/>
+    </source>
+    <source name="lupal.Amiga.gnm1.ann0-cds-fasta" type="lis-fasta" dump="true">
+      <property name="lis-fasta.dataSetDescription" value="CDS models for the lupal.Amiga.gnm1 genome"/>
+      <property name="lis-fasta.dataSetVersion" value="gnm1.ann0"/>
+      <property name="lis-fasta.dataSetUrl" value="https://legumeinfo.org/data/public/Lupinus_albus/Amiga.gnm1.ann0.3GKS/"/>
+      <property name="lis-fasta.taxonId" value="3870"/>
+      <property name="lis-fasta.strainIdentifier" value="Amiga"/>
+      <property name="lis-fasta.sequenceType" value="dna"/>
+      <property name="lis-fasta.className" value="org.intermine.model.bio.CDS"/>
+      <property name="lis-fasta.classAttribute" value="primaryIdentifier"/>
+      <property name="lis-fasta.licence" value="ODC Public Domain Dedication and Licence (PDDL)"/>
+      <property name="lis-fasta.geneAttribute" value="locus"/>
+      <property name="lis-fasta.includes" value="lupal.Amiga.gnm1.ann0.3GKS.cds.fna"/>
+      <property name="src.data.dir" location="/data/LIS/Lupinus_albus/Amiga.gnm1.ann0.3GKS"/>
+    </source>
+    <source name="lupal.Amiga.gnm1.ann0-mrna-fasta" type="lis-fasta" dump="true">
+      <property name="lis-fasta.dataSetDescription" value="mRNA models for the lupal.Amiga.gnm1 genome"/>
+      <property name="lis-fasta.dataSetVersion" value="gnm1.ann0"/>
+      <property name="lis-fasta.dataSetUrl" value="https://legumeinfo.org/data/public/Lupinus_albus/Amiga.gnm1.ann0.3GKS/"/>
+      <property name="lis-fasta.taxonId" value="3870"/>
+      <property name="lis-fasta.strainIdentifier" value="Amiga"/>
+      <property name="lis-fasta.sequenceType" value="dna"/>
+      <property name="lis-fasta.className" value="org.intermine.model.bio.MRNA"/>
+      <property name="lis-fasta.classAttribute" value="primaryIdentifier"/>
+      <property name="lis-fasta.licence" value="ODC Public Domain Dedication and Licence (PDDL)"/>
+      <property name="lis-fasta.geneAttribute" value="locus"/>
+      <property name="lis-fasta.includes" value="lupal.Amiga.gnm1.ann0.3GKS.mRNA.fna"/>
+      <property name="src.data.dir" location="/data/LIS/Lupinus_albus/Amiga.gnm1.ann0.3GKS"/>
+    </source>
     <source name="lupal.Amiga.gnm1.ann0-protein-fasta" type="lis-fasta" dump="true">
-      <property name="lis-fasta.dataSourceName" value="Legume Information System"/>
-      <property name="lis-fasta.dataSetName" value="lupal.Amiga.gnm1.ann0.3GKS"/>
-      <property name="lis-fasta.dataSetDescription" value="Annotation for the lupal.Amiga.gnm1 genome"/>
+      <property name="lis-fasta.dataSetDescription" value="Protein models for the lupal.Amiga.gnm1 genome"/>
+      <property name="lis-fasta.dataSetVersion" value="gnm1.ann0"/>
+      <property name="lis-fasta.dataSetUrl" value="https://legumeinfo.org/data/public/Lupinus_albus/Amiga.gnm1.ann0.3GKS/"/>
       <property name="lis-fasta.taxonId" value="3870"/>
       <property name="lis-fasta.strainIdentifier" value="Amiga"/>
       <property name="lis-fasta.sequenceType" value="protein"/>
       <property name="lis-fasta.className" value="org.intermine.model.bio.Protein"/>
       <property name="lis-fasta.classAttribute" value="primaryIdentifier"/>
-      <property name="lis-fasta.licence" value="https://www.opendatacommons.org/licenses/pddl/1.0/"/>
-      <property name="lis-fasta.geneAttribute" value="gn"/>
+      <property name="lis-fasta.licence" value="ODC Public Domain Dedication and Licence (PDDL)"/>
+      <property name="lis-fasta.geneAttribute" value="locus"/>
       <property name="lis-fasta.includes" value="lupal.Amiga.gnm1.ann0.3GKS.protein.faa"/>
       <property name="src.data.dir" location="/data/LIS/Lupinus_albus/Amiga.gnm1.ann0.3GKS"/>
     </source>
 
-    <!-- lupal.Amiga.gnm1.ann0.mRNA:Lalb_Chr00c01g0403791.1 locus_tag=Lalb_Chr00c01g0403791 gn=Lalb_Chr00c01g0403791 begin=701884 end=711420 len=2004 chr=Lalb_Chr00c01 strand=1 sp=Unknown -->
-    <source name="lupal.Amiga.gnm1.ann0-cds-fasta" type="lis-fasta" dump="true">
-      <property name="lis-fasta.dataSourceName" value="Legume Information System"/>
-      <property name="lis-fasta.dataSetName" value="lupal.Amiga.gnm1.ann0.3GKS"/>
-      <property name="lis-fasta.dataSetDescription" value="Annotation for the lupal.Amiga.gnm1 genome"/>
-      <property name="lis-fasta.taxonId" value="3870"/>
-      <property name="lis-fasta.strainIdentifier" value="Amiga"/>
-      <property name="lis-fasta.sequenceType" value="dna"/>
-      <property name="lis-fasta.className" value="org.intermine.model.bio.CDS"/>
-      <property name="lis-fasta.geneAttribute" value="gn"/>
-      <property name="lis-fasta.includes" value="lupal.Amiga.gnm1.ann0.3GKS.cds.fna"/>
-      <property name="src.data.dir" location="/data/LIS/Lupinus_albus/Amiga.gnm1.ann0.3GKS"/>
-    </source>
-
-    <!-- lupal.Amiga.gnm1.ann0.mRNA:Lalb_Chr10g0090881.1 locus_tag=Lalb_Chr10g0090881 gn=Lalb_Chr10g0090881 begin=8650 end=10881 len=2232 chr=Lalb_Chr10 strand=-1 sp=Unknown Put...family -->
-    <source name="lupal.Amiga.gnm1.ann0-mrna-fasta" type="lis-fasta" dump="true">
-      <property name="lis-fasta.dataSourceName" value="Legume Information System"/>
-      <property name="lis-fasta.dataSetName" value="lupal.Amiga.gnm1.ann0.3GKS"/>
-      <property name="lis-fasta.dataSetDescription" value="Annotation for the lupal.Amiga.gnm1 genome"/>
-      <property name="lis-fasta.taxonId" value="3870"/>
-      <property name="lis-fasta.strainIdentifier" value="Amiga"/>
-      <property name="lis-fasta.sequenceType" value="dna"/>
-      <property name="lis-fasta.className" value="org.intermine.model.bio.MRNA"/>
-      <property name="lis-fasta.geneAttribute" value="gn"/>
-      <property name="lis-fasta.includes" value="lupal.Amiga.gnm1.ann0.3GKS.mRNA.fna"/>
-      <property name="src.data.dir" location="/data/LIS/Lupinus_albus/Amiga.gnm1.ann0.3GKS"/>
-    </source>
-
-
-<!-- Lupinus_angustifolius/ -->
-<!-- ├── about_this_collection -->
-<!-- │   ├── description_Lupinus_angustifolius.yml -->
-<!-- │   └── strains_Lupinus_angustifolius.yml -->
-<!-- ├── Tanjil.gnm1.ann1.nnV9 -->
-<!-- │   ├── lupan.Tanjil.gnm1.ann1.nnV9.cds_all.fna -->
-<!-- │   ├── lupan.Tanjil.gnm1.ann1.nnV9.gene_models_main.gff3 -->
-<!-- │   ├── lupan.Tanjil.gnm1.ann1.nnV9.protein.faa -->
-<!-- └── Tanjil.gnm1.Qq0N -->
-<!--     ├── lupan.Tanjil.gnm1.Qq0N.genome_main.fna -->
-
-    <source name="lupan" type="lis-datastore" dump="true">
+    <!-- ##################### -->
+    <!-- Lupinus angustifolius -->
+    <!-- ##################### -->
+    
+    <!-- about_this_collection -->
+    <!-- ├── description_Lupinus_angustifolius.yml -->
+    <!-- └── strains_Lupinus_angustifolius.yml -->
+    <source name="lupan-about" type="lis-about" dump="true">
+      <property name="dataSetUrl" value="https://legumeinfo.org/data/public/Lupinus_angustifolius/about_this_collection/"/>
+      <property name="dataSetDescription" value="Lupinus angustifolius organism and strain information."/>
       <property name="src.data.dir" location="/data/LIS/Lupinus_angustifolius/about_this_collection"/>
     </source>
 
-    <source name="lupan.Tanjil.gnm1.ann1" type="lis-datastore" dump="true">
-      <property name="src.data.dir" location="/data/LIS/Lupinus_angustifolius/Tanjil.gnm1.ann1.nnV9"/>
-    </source>
+    <!-- ############################ -->
+    <!-- Lupinus angustifolius Tanjil -->
+    <!-- ############################ -->
 
-    <source name="lupan.Tanjil.gnm1.ann1-gff" type="lis-gff" dump="true">
-      <property name="gff3.dataSourceName" value="Legume Information System"/>
-      <property name="gff3.dataSetTitle" value="lupan.Tanjil.gnm1.ann1.nnV9"/>
-      <property name="gff3.dataSetDescription" value="Annotation for the lupan.Tanjil.gnm1 genome"/>
-      <property name="gff3.taxonId" value="3871"/>
-      <property name="gff3.strainIdentifier" value="Tanjil"/>
-      <property name="gff3.licence" value="https://www.opendatacommons.org/licenses/pddl/1.0/"/>
-      <property name="src.data.dir" location="/data/LIS/Lupinus_angustifolius/Tanjil.gnm1.ann1.nnV9"/>
-    </source>
-
+    <!-- Tanjil.gnm1.Qq0N -->
+    <!-- ├── lupan.Tanjil.gnm1.Qq0N.genome_main.fna -->
     <source name="lupan.Tanjil.gnm1-chromosome-fasta" type="lis-fasta" dump="true">
-      <property name="lis-fasta.dataSourceName" value="Legume Information System"/>
-      <property name="lis-fasta.dataSetName" value="lupan.Tanjil.gnm1.F4NR"/>
-      <property name="lis-fasta.dataSetDescription" value="LIS datastore genomic FASTA file"/>
+      <property name="lis-fasta.dataSetDescription" value="LIS datastore genomic FASTA file for Lupinus angustifolius Tanjil"/>
+      <property name="lis-fasta.dataSetVersion" value="gnm1"/>
+      <property name="lis-fasta.dataSetUrl" value="https://legumeinfo.org/data/public/Lupinus_angustifolius/Tanjil.gnm1.Qq0N/"/>
       <property name="lis-fasta.taxonId" value="3871"/>
       <property name="lis-fasta.strainIdentifier" value="Tanjil"/>
       <property name="lis-fasta.sequenceType" value="dna"/>
       <property name="lis-fasta.className" value="org.intermine.model.bio.Chromosome"/>
       <property name="lis-fasta.classAttribute" value="primaryIdentifier"/>
-      <property name="lis-fasta.licence" value="https://www.opendatacommons.org/licenses/pddl/1.0/"/>
+      <property name="lis-fasta.licence" value="ODC Public Domain Dedication and Licence (PDDL)"/>
       <property name="lis-fasta.includes" value="lupan.Tanjil.gnm1.Qq0N.genome_main.fna"/>
       <property name="src.data.dir" location="/data/LIS/Lupinus_angustifolius/Tanjil.gnm1.Qq0N"/>
     </source>
 
+    <!-- Tanjil.gnm1.ann1.nnV9/ -->
+    <!-- ├── lupan.Tanjil.gnm1.ann1.nnV9.gene_models_main.gff3 -->
+    <!-- ├── lupan.Tanjil.gnm1.ann1.nnV9.cds_all.fna -->
+    <!-- ├── lupan.Tanjil.gnm1.ann1.nnV9.protein.faa -->
+    <source name="lupan.Tanjil.gnm1.ann1-gff" type="lis-gff" dump="true">
+      <property name="gff3.dataSourceName" value="LIS Datastore"/>
+      <property name="gff3.dataSourceUrl" value="https://legumeinfo.org/data/public/"/>
+      <property name="gff3.dataSourceDescription" value="A collaborative, community resource to facilitate crop improvement by integrating genetic, genomic, and trait data across legume species."/>
+      <property name="gff3.dataSetTitle" value="lupan.Tanjil.gnm1.ann1.nnV9.gene_models_main.gff3"/>
+      <property name="gff3.dataSetUrl" value="https://legumeinfo.org/data/public/Lupinus_angustifolius/Tanjil.gnm1.ann1.nnV9/"/>
+      <property name="gff3.dataSetDescription" value="Gene model annotation for the lupan.Tanjil.gnm1 genome"/>
+      <property name="gff3.dataSetVersion" value="gnm1.ann1"/>
+      <property name="gff3.licence" value="ODC Public Domain Dedication and Licence (PDDL)"/>
+      <property name="gff3.taxonId" value="3871"/>
+      <property name="gff3.strainIdentifier" value="Tanjil"/>
+      <property name="src.data.dir" location="/data/LIS/Lupinus_angustifolius/Tanjil.gnm1.ann1.nnV9"/>
+    </source>
+    <source name="lupan.Tanjil.gnm1.ann1-cds-fasta" type="lis-fasta" dump="true">
+      <property name="lis-fasta.dataSetDescription" value="CDS models for the lupan.Tanjil.gnm1 genome"/>
+      <property name="lis-fasta.dataSetVersion" value="gnm1.ann1"/>
+      <property name="lis-fasta.dataSetUrl" value="https://legumeinfo.org/data/public/Lupinus_angustifolius/Tanjil.gnm1.ann1.nnV9/"/>
+      <property name="lis-fasta.taxonId" value="3871"/>
+      <property name="lis-fasta.strainIdentifier" value="Tanjil"/>
+      <property name="lis-fasta.sequenceType" value="dna"/>
+      <property name="lis-fasta.className" value="org.intermine.model.bio.CDS"/>
+      <property name="lis-fasta.classAttribute" value="primaryIdentifier"/>
+      <property name="lis-fasta.licence" value="ODC Public Domain Dedication and Licence (PDDL)"/>
+      <property name="lis-fasta.geneAttribute" value="locus"/>
+      <property name="lis-fasta.includes" value="lupan.Tanjil.gnm1.ann1.nnV9.cds_all.fna"/>
+      <property name="src.data.dir" location="/data/LIS/Lupinus_angustifolius/Tanjil.gnm1.ann1.nnV9"/>
+    </source>
     <source name="lupan.Tanjil.gnm1.ann1-protein-fasta" type="lis-fasta" dump="true">
-      <property name="lis-fasta.dataSourceName" value="Legume Information System"/>
-      <property name="lis-fasta.dataSetName" value="lupan.Tanjil.gnm1.ann1.nnV9"/>
-      <property name="lis-fasta.dataSetDescription" value="Annotation for the lupan.Tanjil.gnm1 genome"/>
+      <property name="lis-fasta.dataSetDescription" value="Protein models for the lupan.Tanjil.gnm1 genome"/>
+      <property name="lis-fasta.dataSetVersion" value="gnm1.ann1"/>
+      <property name="lis-fasta.dataSetUrl" value="https://legumeinfo.org/data/public/Lupinus_angustifolius/Tanjil.gnm1.ann1.nnV9/"/>
       <property name="lis-fasta.taxonId" value="3871"/>
       <property name="lis-fasta.strainIdentifier" value="Tanjil"/>
       <property name="lis-fasta.sequenceType" value="protein"/>
       <property name="lis-fasta.className" value="org.intermine.model.bio.Protein"/>
       <property name="lis-fasta.classAttribute" value="primaryIdentifier"/>
-      <property name="lis-fasta.licence" value="https://www.opendatacommons.org/licenses/pddl/1.0/"/>
-      <property name="lis-fasta.geneAttribute" value="gn"/>
+      <property name="lis-fasta.licence" value="ODC Public Domain Dedication and Licence (PDDL)"/>
+      <property name="lis-fasta.geneAttribute" value="locus"/>
       <property name="lis-fasta.includes" value="lupan.Tanjil.gnm1.ann1.nnV9.protein.faa"/>
       <property name="src.data.dir" location="/data/LIS/Lupinus_angustifolius/Tanjil.gnm1.ann1.nnV9"/>
     </source>
-
-    <!-- lupan.Tanjil.gnm1.ann1.mRNA:Lalb_Chr00c01g0403791.1 locus_tag=Lalb_Chr00c01g0403791 gn=Lalb_Chr00c01g0403791 begin=701884 end=711420 len=2004 chr=Lalb_Chr00c01 strand=1 sp=Unknown -->
-    <source name="lupan.Tanjil.gnm1.ann1-cds-fasta" type="lis-fasta" dump="true">
-      <property name="lis-fasta.dataSourceName" value="Legume Information System"/>
-      <property name="lis-fasta.dataSetName" value="lupan.Tanjil.gnm1.ann1.nnV9"/>
-      <property name="lis-fasta.dataSetDescription" value="Annotation for the lupan.Tanjil.gnm1 genome"/>
-      <property name="lis-fasta.taxonId" value="3871"/>
-      <property name="lis-fasta.strainIdentifier" value="Tanjil"/>
-      <property name="lis-fasta.sequenceType" value="dna"/>
-      <property name="lis-fasta.className" value="org.intermine.model.bio.CDS"/>
-      <property name="lis-fasta.geneAttribute" value="gn"/>
-      <property name="lis-fasta.includes" value="lupan.Tanjil.gnm1.ann1.nnV9.cds_all.fna"/>
-      <property name="src.data.dir" location="/data/LIS/Lupinus_angustifolius/Tanjil.gnm1.ann1.nnV9"/>
-    </source>
-
     
-
-    <!-- ################################################################################################# -->
-
-    <!-- LIS gene families -->
-    <source name="legume.genefam.fam1" type="lis-datastore" dump="true">
-      <property name="src.data.dir" location="/data/LIS/Gene_families/legume.genefam.fam1.M65K"/>
+    <!-- Tanjil.gnm1.ann1.syn1.TwnC/ -->
+    <!-- ├── lupan.Tanjil.gnm1.ann1.x.aradu.V14167.gnm1.ann1.gff -->
+    <!-- ├── lupan.Tanjil.gnm1.ann1.x.araip.K30076.gnm1.ann1.gff -->
+    <!-- ├── lupan.Tanjil.gnm1.ann1.x.glyma.Wm82.gnm2.ann1.gff -->
+    <!-- ├── lupan.Tanjil.gnm1.ann1.x.lotja.MG20.gnm3.ann1.gff -->
+    <!-- ├── lupan.Tanjil.gnm1.ann1.x.lupan.Tanjil.gnm1.ann1.gff -->
+    <!-- ├── lupan.Tanjil.gnm1.ann1.x.medtr.A17_HM341.gnm4.ann2.gff -->
+    <!-- ├── lupan.Tanjil.gnm1.ann1.x.phavu.G19833.gnm1.ann1.gff -->
+    <source name="lupan.Tanjil.gnm1.ann1.syn1-synteny" type="lis-synteny" dump="true"> 
+      <property name="dataSetUrl" value="https://legumeinfo.org/data/public/Lupinus_angustifolius/Tanjil.gnm1.ann1.syn1.TwnC/"/>
+      <property name="dataSetDescription" value="Synteny between Lupinus angustifolius Tanjil.gnm1 and other species."/>
+      <property name="src.data.dir" location="/data/LIS/Lupinus_angustifolius/Tanjil.gnm1.ann1.syn1.TwnC"/>
+    </source>
+    
+    <!-- ############### -->
+    <!-- ONTOLOGIES ETC. -->
+    <!-- ############### -->
+    
+    <!-- INTERPRO -->
+    <source name="interpro" type="interpro">
+      <property name="data.source.name" value="InterPro"/>
+      <property name="data.source.description" value="XML file listing each InterPro entry."/>
+      <property name="data.source.url" value="ftp://ftp.ebi.ac.uk/pub/databases/interpro/"/>
+      <property name="src.data.dir" location="/data/InterPro/"/>
+    </source>
+    <source name="interpro-go" type="interpro-go">
+      <property name="data.source.name" value="InterPro2GO"/>
+      <property name="data.source.description" value="Mappings of InterPro entries to Gene Ontology (GO) terms."/>
+      <property name="data.source.url" value="ftp://ftp.ebi.ac.uk/pub/databases/interpro/"/>
+      <property name="src.data.dir" location="/data/InterPro/ontology/"/>
     </source>
 
     <!-- gene ontology -->
     <source name="go" type="go">
-      <property name="data.source.name" value="GO"/>
-      <property name="data.source.description" value="Gene Ontology"/>
-      <property name="data.source.url" value="http://current.geneontology.org/ontology/go-basic.obo"/>
       <property name="src.data.file" location="/data/gene-ontology/go-basic.obo"/>
     </source>
-    
+
     <!-- sequence ontology -->
     <source name="so" type="so">
-      <property name="data.source.name" value="SO"/>
-      <property name="data.source.description" value="Sequence Ontology"/>
-      <property name="data.source.url" value="https://github.com/The-Sequence-Ontology/SO-Ontologies.git"/>
       <property name="src.data.file" location="/data/SO-Ontologies/so-simple.obo"/>
     </source>
 
-    <!-- InterPro -->
-    <source name="interpro" type="interpro">
-      <property name="data.source.name" value="InterPro"/>
-      <property name="data.source.description" value="XML file listing each InterPro entry, the signatures that it contains, its abstract, GO terms, etc."/>
-      <property name="data.source.url" value="ftp://ftp.ebi.ac.uk/pub/databases/interpro/interpro.xml.gz"/>
-      <property name="src.data.dir" location="/data/InterPro/"/>
+    <!-- plant ontology -->
+    <source name="plant-ontology" type="plant-ontology">
+      <property name="src.data.file" location="/data/plant-ontology/po.obo"/>
+      <property name="ontology.prefix" value="PO"/>
     </source>
-    
-    <!-- InterPro to GO -->
-    <source name="interpro-go" type="interpro-go">
-      <property name="data.source.name" value="InterPro2GO"/>
-      <property name="data.source.description" value="Mappings of InterPro entries to Gene Ontology (GO) terms."/>
-      <property name="data.source.url" value="ftp://ftp.ebi.ac.uk/pub/databases/interpro/interpro2go"/>
-      <property name="src.data.dir" location="/data/InterPro/ontology/"/>
+
+    <!-- plant trait ontology -->
+    <source name="plant-trait-ontology" type="plant-trait-ontology">
+      <property name="src.data.file" location="/data/plant-trait-ontology/to.obo"/>
+      <property name="ontology.prefix" value="TO"/>
     </source>
 
   </sources>
 
+  <!-- ############### -->
+  <!-- post-processing -->
+  <!-- ############### -->
+  
   <post-processing>
     <!-- IM CORE -->
     <post-process name="do-sources" />
@@ -217,7 +255,6 @@
     <post-process name="create-intergenic-region-features"/>
     <post-process name="transfer-sequences"/>
     <post-process name="populate-child-features"/>
-    <post-process name="create-intron-features"/>
     <post-process name="create-gene-flanking-features"/>
 
     <!-- LIS -->
@@ -233,5 +270,5 @@
     <post-process name="create-autocomplete-index"/>
     <post-process name="create-search-index"/>
   </post-processing>
-</project>
 
+</project>
