@@ -4,3 +4,4 @@ webapp/src/main/webapp/model/
 dbmodel/build/
 webapp/build/
 *.log
+*~
