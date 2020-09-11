@@ -50,6 +50,7 @@
     <!-- ├── lupal.Amiga.gnm1.ann0.3GKS.cds.fna -->
     <!-- ├── lupal.Amiga.gnm1.ann0.3GKS.mRNA.fna -->
     <!-- ├── lupal.Amiga.gnm1.ann0.3GKS.protein.faa -->
+    <!-- ├── lupal.Amiga.gnm1.ann0.3GKS.legfed_v1_0.M65K.gfa.tsv -->
     <source name="lupal.Amiga.gnm1.ann0-gff" type="lis-gff" dump="true">
       <property name="gff3.dataSourceName" value="LIS Datastore"/>
       <property name="gff3.dataSourceUrl" value="https://legumeinfo.org/data/public/"/>
@@ -103,6 +104,11 @@
       <property name="lis-fasta.licence" value="ODC Public Domain Dedication and Licence (PDDL)"/>
       <property name="lis-fasta.geneAttribute" value="locus"/>
       <property name="lis-fasta.includes" value="lupal.Amiga.gnm1.ann0.3GKS.protein.faa"/>
+      <property name="src.data.dir" location="/data/LIS/Lupinus_albus/Amiga.gnm1.ann0.3GKS"/>
+    </source>
+    <source name="lupal.Amiga.gnm1.ann0-gfa" type="lis-gfa" dump="true"> 
+      <property name="dataSetUrl" value="https://legumeinfo.org/data/public/Lupinus_albus/Amiga.gnm1.ann0.3GKS/"/>
+      <property name="dataSetDescription" value="Gene family assignments for Lupinus albus Amiga genes and proteins."/>
       <property name="src.data.dir" location="/data/LIS/Lupinus_albus/Amiga.gnm1.ann0.3GKS"/>
     </source>
 
@@ -228,23 +234,33 @@
     </source>
 
     <!-- plant ontology -->
-    <source name="plant-ontology" type="plant-ontology">
+    <source name="plant-ontology" type="obo">
       <property name="src.data.file" location="/data/plant-ontology/po.obo"/>
       <property name="ontology.prefix" value="PO"/>
+      <property name="obo.ontology.name" value="Plant Ontology"/>
+      <property name="obo.ontology.url" value="http://planteome.org/"/>
+      <property name="obo.ontology.licence" value="https://creativecommons.org/licenses/by/4.0/"/>
+      <property name="obo.ontology.description" value="The Plant Ontology (PO) is a community resource consisting of standardized terms, definitions, and logical relations describing plant structures and development stages, augmented by a large database of annotations from genomic and phenomic studies."/>
     </source>
-
+    
     <!-- plant trait ontology -->
-    <source name="plant-trait-ontology" type="plant-trait-ontology">
+    <source name="plant-trait-ontology" type="obo">
       <property name="src.data.file" location="/data/plant-trait-ontology/to.obo"/>
       <property name="ontology.prefix" value="TO"/>
+      <property name="obo.ontology.name" value="Plant Trait Ontology"/>
+      <property name="obo.ontology.url" value="http://www.obofoundry.org/ontology/to.html"/>
+      <property name="obo.ontology.licence" value="https://creativecommons.org/licenses/by/4.0/"/>
+      <property name="obo.ontology.description" value="A controlled vocabulary of describe phenotypic traits in plants."/>
     </source>
+
+    <!-- there is no lupin crop ontology -->
 
   </sources>
 
   <!-- ############### -->
   <!-- post-processing -->
   <!-- ############### -->
-  
+
   <post-processing>
     <!-- IM CORE -->
     <post-process name="do-sources" />
@@ -258,13 +274,14 @@
     <post-process name="create-gene-flanking-features"/>
 
     <!-- LIS -->
-    <post-process name="lis-create-cds-gene-references"/>
-    <post-process name="lis-create-cds-protein-references"/>
-    <post-process name="lis-create-cds-transcript-references"/>
-    <post-process name="lis-create-gene-protein-collections"/>
-    <post-process name="lis-create-transcript-gene-references"/>
-    <post-process name="lis-create-transcript-protein-references"/>
+    <post-process name="lis-populate-cds-gene-references"/>
+    <post-process name="lis-populate-cds-protein-references"/>
+    <post-process name="lis-populate-cds-transcript-references"/>
+    <post-process name="lis-populate-gene-protein-collections"/>
+    <post-process name="lis-populate-qtl-gene-collections"/>
     <post-process name="lis-populate-publications"/>
+    <post-process name="lis-populate-transcript-gene-references"/>
+    <post-process name="lis-populate-transcript-protein-references"/>
 
     <!-- VIEWS AND INDEXES -->
     <post-process name="create-location-overlap-index"/>

@@ -154,9 +154,14 @@
   </class>
 
   <class className="org.intermine.model.bio.ProteinDomain">
+    <headerconfig>
+      <titles>
+        <title mainTitles="primaryIdentifier|name" subTitles="ontology.name" />
+      </titles>
+    </headerconfig>
     <fields>
-      <fieldconfig fieldExpr="name" label="Name"/>
       <fieldconfig fieldExpr="primaryIdentifier" label="identifier"/>
+      <fieldconfig fieldExpr="name" label="Name"/>
     </fields>
   </class>
 
@@ -199,9 +204,13 @@
   </class>
 
   <class className="org.intermine.model.bio.OntologyTermSynonym">
+    <headerconfig>
+      <titles>
+        <title mainTitles="name"/>
+      </titles>
+    </headerconfig>
     <fields>
       <fieldconfig fieldExpr="name"/>
-      <fieldconfig fieldExpr="type"/>
     </fields>
   </class>
 
@@ -303,8 +312,8 @@
       </titles>
     </headerconfig>
     <fields>
-      <fieldconfig fieldExpr="description" label="Description"/>
       <fieldconfig fieldExpr="identifier" label="LIS identifier"/>
+      <fieldconfig fieldExpr="description" label="Description"/>
     </fields>
   </class>
 
@@ -403,9 +412,6 @@
   <!--   </headerconfig> -->
   <!--   <fields> -->
   <!--     <fieldconfig fieldExpr="primaryIdentifier" label="Name"/> -->
-  <!--     <fieldconfig fieldExpr="geo" label="NCBI GEO Accession"/> -->
-  <!--     <fieldconfig fieldExpr="bioProject" label="NCBI BioProject Accession"/> -->
-  <!--     <fieldconfig fieldExpr="sra" label="NCBI SRA Accession"/> -->
   <!--   </fields> -->
   <!-- </class> -->
 
@@ -592,6 +598,7 @@
     <!--                  replacesFields="lines,markers" -->
     <!--                  placement="summary" -->
     <!--                  types="GenotypingStudy"/> -->
+
 
     <!-- <reportdisplayer javaClass="org.ncgr.intermine.bio.web.displayer.GeneBarchartDisplayer" -->
     <!--                  jspName="model/geneBarchartDisplayer.jsp" -->
