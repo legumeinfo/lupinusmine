@@ -9,6 +9,7 @@
     <source name="lis.fam1-genefamily" type="lis-genefamily" dump="true">
       <property name="dataSetUrl" value="https://legumeinfo.org/data/public/Gene_families/legume.genefam.fam1.M65K/"/>
       <property name="dataSetDescription" value="LIS gene families"/>
+      <property name="desired.organisms" value="aradu araip arahy arath cajca cicar cucsa glyma lotja lupan medtr phalu phavu prupe solly tripr vigan vigra vigun vitvi"/>
       <property name="src.data.dir" location="/data/LIS/Gene_families/legume.genefam.fam1.M65K"/>
     </source>
 
@@ -111,6 +112,11 @@
       <property name="dataSetDescription" value="Gene family assignments for Lupinus albus Amiga genes and proteins."/>
       <property name="src.data.dir" location="/data/LIS/Lupinus_albus/Amiga.gnm1.ann0.3GKS"/>
     </source>
+    <source name="lupal.Amiga.gnm1.ann0-pathway" type="lis-pathway" dump="true"> 
+      <property name="dataSetUrl" value="https://legumeinfo.org/data/public/Lupinus_albus/Amiga.gnm1.ann0.3GKS/"/>
+      <property name="dataSetDescription" value="Plant Reactome pathway assignments for Lupinus albus Amiga genes via gene family membership with Lupinus angustifolius genes."/>
+      <property name="src.data.dir" location="/data/LIS/Lupinus_albus/Amiga.gnm1.ann0.3GKS"/>
+    </source>
 
     <!-- ##################### -->
     <!-- Lupinus angustifolius -->
@@ -188,6 +194,16 @@
       <property name="lis-fasta.licence" value="ODC Public Domain Dedication and Licence (PDDL)"/>
       <property name="lis-fasta.geneAttribute" value="locus"/>
       <property name="lis-fasta.includes" value="lupan.Tanjil.gnm1.ann1.nnV9.protein.faa"/>
+      <property name="src.data.dir" location="/data/LIS/Lupinus_angustifolius/Tanjil.gnm1.ann1.nnV9"/>
+    </source>
+    <source name="lupan.Tanjil.gnm1.ann1-gfa" type="lis-gfa" dump="true"> 
+      <property name="dataSetUrl" value="https://legumeinfo.org/data/public/Lupinus_angustifolius/Tanjil.gnm1.ann1.nnV9/"/>
+      <property name="dataSetDescription" value="Gene family assignments for Lupinus angustifolius Tanjil genes and proteins."/>
+      <property name="src.data.dir" location="/data/LIS/Lupinus_angustifolius/Tanjil.gnm1.ann1.nnV9"/>
+    </source>
+    <source name="lupan.Tanjil.gnm1.ann1-pathway" type="lis-pathway" dump="true"> 
+      <property name="dataSetUrl" value="https://legumeinfo.org/data/public/Lupinus_angustifolius/Tanjil.gnm1.ann1.nnV9/"/>
+      <property name="dataSetDescription" value="Plant Reactome pathway assignments for Lupinus angustifolius Tanjil genes."/>
       <property name="src.data.dir" location="/data/LIS/Lupinus_angustifolius/Tanjil.gnm1.ann1.nnV9"/>
     </source>
     
@@ -282,6 +298,7 @@
     <post-process name="lis-populate-publications"/>
     <post-process name="lis-populate-transcript-gene-references"/>
     <post-process name="lis-populate-transcript-protein-references"/>
+    <post-process name="lis-populate-protein-pathway-collections"/>
 
     <!-- VIEWS AND INDEXES -->
     <post-process name="create-location-overlap-index"/>
