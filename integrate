@@ -21,32 +21,36 @@ echo ""
 ## LIS gene families
 ./gradlew integrate -Psource=lis.fam1-genefamily --stacktrace
 
-###########
-## lupal ##
-###########
-
+## about
 ./gradlew integrate -Psource=lupal-about
+./gradlew integrate -Psource=lupan-about
 
 ## lupal.Amiga
 ./gradlew integrate -Psource=lupal.Amiga.gnm1-chromosome-fasta
-./gradlew integrate -Psource=lupal.Amiga.gnm1.ann0-cds-fasta
-./gradlew integrate -Psource=lupal.Amiga.gnm1.ann0-mrna-fasta
-./gradlew integrate -Psource=lupal.Amiga.gnm1.ann0-protein-fasta
-./gradlew integrate -Psource=lupal.Amiga.gnm1.ann0-gff
-./gradlew integrate -Psource=lupal.Amiga.gnm1.ann0-gfa
-./gradlew integrate -Psource=lupal.Amiga.gnm1.ann0-pathway
-
-###########
-## lupan ##
-###########
-
-./gradlew integrate -Psource=lupan-about
-
-## lupan.Tanjil
 ./gradlew integrate -Psource=lupan.Tanjil.gnm1-chromosome-fasta
+
+## cds-fasta
+./gradlew integrate -Psource=lupal.Amiga.gnm1.ann0-cds-fasta
 ./gradlew integrate -Psource=lupan.Tanjil.gnm1.ann1-cds-fasta
+
+## mrna-fasta
+./gradlew integrate -Psource=lupal.Amiga.gnm1.ann0-mrna-fasta
+
+## protein-fasta
+./gradlew integrate -Psource=lupal.Amiga.gnm1.ann0-protein-fasta
 ./gradlew integrate -Psource=lupan.Tanjil.gnm1.ann1-protein-fasta
+
+## gff
+./gradlew integrate -Psource=lupal.Amiga.gnm1.ann0-gff
 ./gradlew integrate -Psource=lupan.Tanjil.gnm1.ann1-gff
+
+## gfa
+./gradlew integrate -Psource=lupal.Amiga.gnm1.ann0-gfa
 ./gradlew integrate -Psource=lupan.Tanjil.gnm1.ann1-gfa
+
+## pathway
+./gradlew integrate -Psource=lupal.Amiga.gnm1.ann0-pathway
 ./gradlew integrate -Psource=lupan.Tanjil.gnm1.ann1-pathway
+
+## synteny
 ./gradlew integrate -Psource=lupan.Tanjil.gnm1.ann1.syn1-synteny
