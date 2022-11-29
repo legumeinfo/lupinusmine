@@ -1,7 +1,7 @@
 <project type="bio">
   <property name="target.model" value="genomic"/>
   <property name="common.os.prefix" value="common"/>
-  <property name="intermine.properties.file" value="lupinmine.properties"/>
+  <property name="intermine.properties.file" value="lupinusmine.properties"/>
   <property name="default.intermine.properties.file" location="../default.intermine.integrate.properties"/>
   <sources>
 
@@ -19,19 +19,19 @@
       <property name="dataSetDescription" value="Lupinus angustifolius organism and strain information." />
       <property name="src.data.dir" location="/data/v2/Lupinus/angustifolius/about_this_collection" />
     </source>
-
+    
     <!-- Lupinus/albus/genomes/Amiga.gnm1.F4NR -->
-    <source name="Amiga.gnm1.F4NR" type="lis-fasta" dump="true">
+    <source name="Amiga.gnm1.F4NR" type="lis-genome" dump="true">
       <property name="dataSetUrl" value="https://data.legumeinfo.org/Lupinus/albus/genomes/Amiga.gnm1.F4NR/" />
-      <property name="lis-fasta.className" value="org.intermine.model.bio.Chromosome" />
-      <property name="lis-fasta.includes" value="README.Amiga.gnm1.F4NR.yml,lupal.Amiga.gnm1.F4NR.genome_main.fna.gz" />
+      <property name="lis-genome.className" value="org.intermine.model.bio.Chromosome" />
+      <property name="lis-genome.includes" value="README.Amiga.gnm1.F4NR.yml,lupal.Amiga.gnm1.F4NR.genome_main.fna.gz" />
       <property name="src.data.dir" location="/data/v2/Lupinus/albus/genomes/Amiga.gnm1.F4NR"/>
     </source>
     <!-- Lupinus/angustifolius/genomes/Tanjil.gnm1.Qq0N -->
-    <source name="Tanjil.gnm1.Qq0N" type="lis-fasta" dump="true">
+    <source name="Tanjil.gnm1.Qq0N" type="lis-genome" dump="true">
       <property name="dataSetUrl" value="https://data.legumeinfo.org/Lupinus/angustifolius/genomes/Tanjil.gnm1.Qq0N/" />
-      <property name="lis-fasta.className" value="org.intermine.model.bio.Chromosome" />
-      <property name="lis-fasta.includes" value="README.Tanjil.gnm1.Qq0N.yml,lupan.Tanjil.gnm1.Qq0N.genome_main.fna.gz" />
+      <property name="lis-genome.className" value="org.intermine.model.bio.Chromosome" />
+      <property name="lis-genome.includes" value="README.Tanjil.gnm1.Qq0N.yml,lupan.Tanjil.gnm1.Qq0N.genome_main.fna.gz" />
       <property name="src.data.dir" location="/data/v2/Lupinus/angustifolius/genomes/Tanjil.gnm1.Qq0N"/>
     </source>
 
@@ -51,12 +51,40 @@
       <property name="dataSetUrl" value="https://data.legumeinfo.org/Lupinus/angustifolius/synteny/Tanjil.gnm1.syn.TwnC/" />
       <property name="src.data.dir" location="/data/v2/Lupinus/angustifolius/synteny/Tanjil.gnm1.syn.TwnC" />
     </source>
-    
-    <!-- ############### -->
-    <!-- ONTOLOGIES ETC. -->
-    <!-- ############### -->
 
-    <!-- LIS gene families -->
+    <!-- ############### ONTOLOGIES etc. ############### -->
+
+    <!-- sequence ontology -->
+    <source name="so" type="so">
+      <property name="src.data.file" location="/data/SO-Ontologies/Ontology_Files/so-simple.obo"/>
+    </source>
+    
+    <!-- gene ontology -->
+    <source name="go" type="go">
+      <property name="src.data.file" location="/data/gene-ontology/go-basic.obo"/>
+    </source>
+
+    <!-- INTERPRO -->
+    <source name="interpro" type="interpro">
+      <property name="src.data.dir" location="/data/InterPro/"/>
+    </source>
+
+    <!-- InterPro2GO -->
+    <source name="interpro-go" type="interpro-go">
+      <property name="src.data.dir" location="/data/InterPro/ontology/"/>
+    </source>
+
+    <!-- Pfam terms -->
+    <source name="pfam-term" type="pfam-term">
+      <property name="src.data.dir" location="/data/Pfam/"/>
+    </source>
+
+    <!-- PANTHER terms -->
+    <source name="panther-term" type="panther-term">
+      <property name="src.data.dir" location="/data/PANTHER/"/>
+    </source>
+    
+    <!-- LEGUMES/Fabaceae/genefamilies/legume.genefam.fam1.M65K/ -->
     <source name="legume.genefam.fam1.M65K" type="lis-genefamily" dump="true">
       <property name="dataSetName" value="legume.genefam.fam1.M65K"/>
       <property name="dataSetUrl" value="https://data.legumeinfo.org/LEGUMES/Fabaceae/genefamilies/legume.genefam.fam1.M65K/" />
@@ -64,7 +92,7 @@
       <property name="src.data.dir" location="/data/v2/LEGUMES/Fabaceae/genefamilies/legume.genefam.fam1.M65K"/>
     </source>
 
-    <!-- LIS gene family trees -->
+    <!-- LEGUMES/Fabaceae/genefamilies/legume.genefam.fam1.M65K/legume.genefam.fam1.M65K.trees_ML_rooted/ -->
     <source name="legume.genefam.fam1.M65K.trees_ML_rooted" type="lis-phylotree" dump="true">
       <property name="dataSetName" value="legume.genefam.fam1.M65K.trees_ML_rooted"/>
       <property name="dataSetUrl" value="https://data.legumeinfo.org/LEGUMES/Fabaceae/genefamilies/legume.genefam.fam1.M65K/legume.genefam.fam1.M65K.trees_ML_rooted/" />
@@ -72,59 +100,11 @@
       <property name="src.data.dir" location="/data/v2/LEGUMES/Fabaceae/genefamilies/legume.genefam.fam1.M65K/legume.genefam.fam1.M65K.trees_ML_rooted"/>
     </source>
 
-    <!-- INTERPRO -->
-    <source name="interpro" type="interpro">
-      <property name="data.source.name" value="InterPro"/>
-      <property name="data.source.description" value="XML file listing each InterPro entry."/>
-      <property name="data.source.url" value="ftp://ftp.ebi.ac.uk/pub/databases/interpro/"/>
-      <property name="src.data.dir" location="/data/InterPro/"/>
-    </source>
-    <source name="interpro-go" type="interpro-go">
-      <property name="data.source.name" value="InterPro2GO"/>
-      <property name="data.source.description" value="Mappings of InterPro entries to Gene Ontology (GO) terms."/>
-      <property name="data.source.url" value="ftp://ftp.ebi.ac.uk/pub/databases/interpro/"/>
-      <property name="src.data.dir" location="/data/InterPro/ontology/"/>
-    </source>
-
-    <!-- gene ontology -->
-    <source name="go" type="go">
-      <property name="src.data.file" location="/data/gene-ontology/go-basic.obo"/>
-    </source>
-
-    <!-- sequence ontology -->
-    <source name="so" type="so">
-      <property name="src.data.file" location="/data/SO-Ontologies/Ontology_Files/so-simple.obo"/>
-    </source>
-
-    <!-- plant ontology -->
-    <source name="plant-ontology" type="obo">
-      <property name="src.data.file" location="/data/plant-ontology/po.obo"/>
-      <property name="ontology.prefix" value="PO"/>
-      <property name="obo.ontology.name" value="Plant Ontology"/>
-      <property name="obo.ontology.url" value="http://planteome.org/"/>
-      <property name="obo.ontology.licence" value="https://creativecommons.org/licenses/by/4.0/"/>
-      <property name="obo.ontology.description" value="The Plant Ontology (PO) is a community resource consisting of standardized terms, definitions, and logical relations describing plant structures and development stages, augmented by a large database of annotations from genomic and phenomic studies."/>
-    </source>
-    
-    <!-- plant trait ontology -->
-    <source name="plant-trait-ontology" type="obo">
-      <property name="src.data.file" location="/data/plant-trait-ontology/to.obo"/>
-      <property name="ontology.prefix" value="TO"/>
-      <property name="obo.ontology.name" value="Plant Trait Ontology"/>
-      <property name="obo.ontology.url" value="http://www.obofoundry.org/ontology/to.html"/>
-      <property name="obo.ontology.licence" value="https://creativecommons.org/licenses/by/4.0/"/>
-      <property name="obo.ontology.description" value="A controlled vocabulary of describe phenotypic traits in plants."/>
-    </source>
-
-    <!-- there is no lupin crop ontology -->
-
   </sources>
 
-  <!-- ############### -->
-  <!-- post-processing -->
-  <!-- ############### -->
 
   <post-processing>
+
     <!-- IM CORE -->
     <post-process name="do-sources" />
     <post-process name="create-utr-references"/>
@@ -147,6 +127,7 @@
     <post-process name="summarise-objectstore"/>
     <post-process name="create-autocomplete-index"/>
     <post-process name="create-search-index"/>
+
   </post-processing>
 
 </project>
