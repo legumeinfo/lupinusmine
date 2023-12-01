@@ -108,9 +108,9 @@
     <post-process name="make-spanning-locations"/>
     <post-process name="create-chromosome-locations-and-lengths"/>
     <post-process name="create-intergenic-region-features"/>
-    <post-process name="transfer-sequences"/>
     <post-process name="populate-child-features"/>
     <post-process name="create-gene-flanking-features"/>
+    <post-process name="transfer-sequences"/>
 
     <!-- LIS -->
     <post-process name="lis-create-genefamilytally" />
